@@ -9,7 +9,6 @@ export default class Player extends Component {
 		<source src="http://stream.laut.fm/city" type="audio/ogg" />
         Ваш браузер не поддерживается
     </audio>
-	<iframe src="https://cityfm.gq/player.php"></iframe>
 </section>
         )
     }
