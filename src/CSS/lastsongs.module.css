@@ -1,16 +1,19 @@
 .song_history {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
 .last_song {
     border-radius: 20px;
-    padding: 2vw;
+    padding: 4vw 2vw;
+    padding-bottom: 0.5vw;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    flex: 1;
+    align-content: flex-end;
+    background-color: #292926;
+    margin: 1vw;
     display: flex;
     flex-wrap: wrap;
-    align-content: flex-end;
+    align-items: flex-end;
 }

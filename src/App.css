@@ -2,13 +2,17 @@
 
 * {
   box-sizing: border-box;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
 }
 body {
 	font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   margin: 0;
   padding: 0;
-  background-image: url(Images/hero.jpg);
+  background-color: #151414;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -21,7 +25,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 2vw;
+  padding: 1vw 2vw;
   box-shadow: 0px -2px 8px 0px rgba(0,0,0,0.04), 0px 8px 8px 0px rgba(0,0,0,0.04);
   position: sticky;
   width: 100%;
