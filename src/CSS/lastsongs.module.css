@@ -1,0 +1,16 @@
+.song_history {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.last_song {
+    border-radius: 20px;
+    padding: 2vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-end;
+}

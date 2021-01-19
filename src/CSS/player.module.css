@@ -1,0 +1,14 @@
+.audio_player {
+    position: sticky;
+    bottom: 0;
+    backdrop-filter: saturate(180%) blur(20px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vw;
+}
+
+.song_cover {
+    width: 6vw;
+}
+  

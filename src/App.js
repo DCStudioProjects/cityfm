@@ -5,12 +5,12 @@ import Footer from './Pages/Footer';
 
 function App() {
   return (
-<>
-<Header/>
-<Player />
-<Footer />
-</>
-  );
+          <>
+            <Header/>
+            <Player />
+            <Footer />
+          </>
+        );
 }
 
 export default App;

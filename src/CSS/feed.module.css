@@ -1,0 +1,21 @@
+.feed {
+    display: flex;
+}
+
+.feed_post {
+    padding: 1vw;
+    background-position: center center;
+    margin-right: 1vw;
+}
+
+.feed_post:nth-child(1) {
+    background-image: url("https://assets.laut.fm/e1d6bde4572a8adb921bb70b0655e918");
+    background-size: cover;
+    border-radius: 20px;
+}
+
+.feed_post:nth-child(2) {
+    background-image: url("../Images/2010.jpg");
+    background-size: cover;
+    border-radius: 20px;
+}
