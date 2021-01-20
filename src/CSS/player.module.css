@@ -6,10 +6,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2vw;
+    padding: 0.5vw 2vw;
 }
 
 .song_cover {
-    width: 6vw;
+    width: 7vw;
+    border-radius: 10px;
 }
   

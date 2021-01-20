@@ -1,5 +1,6 @@
 .section_title {
     font-size: 2vw;
+    padding: 1vw;
 }
 
 .song_history {
@@ -50,4 +51,4 @@
     .last_song {
         padding: 5vw;
     }
-  }
+}

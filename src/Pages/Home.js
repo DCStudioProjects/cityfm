@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import Feed from '../Components/Feed';
 import Hero from '../Components/Hero';
-import Lastsongs from '../Components/Lastsongs';
 import OnAir from '../Components/OnAir';
+import Lastsongs from '../Components/Lastsongs';
 
 export default class Home extends Component {
     render() {
@@ -10,8 +10,8 @@ export default class Home extends Component {
             <>
             <Feed />
             <Hero />
-            <Lastsongs />
             <OnAir />
+            <Lastsongs />
             </>
         )
     }

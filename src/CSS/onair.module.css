@@ -1,0 +1,18 @@
+.on_air {
+    display: flex;
+}
+
+.on_air, .next_onair {
+    flex: 1;
+    flex-wrap: wrap;
+    padding: 1vw;
+}
+
+h2 {
+    font-size: 2vw;
+}
+
+.on_air *, .next_onair * {
+    width: 100%;
+    line-height: 1.8em;
+}

@@ -13,6 +13,10 @@ export default class Feed extends Component {
                     <h2>2010'S HOT SHOW WITH DANNY FUN</h2>
                     <p></p>
                 </div>
+                <div className={style.feed_post}>
+                    <h2>HOT20 COUNTDOWN</h2>
+                    <p></p>
+                </div>
             </section>
         )
     }
