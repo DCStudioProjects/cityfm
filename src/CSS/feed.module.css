@@ -3,9 +3,12 @@
 }
 
 .feed_post {
-    padding: 4vw;
+    padding: 2vw;
+    padding-bottom: 1vw;
+    padding-top: 8vw;
     background-position: center center;
     margin-right: 1vw;
+    position: relative;
 }
 
 .feed_post:nth-child(1) {
@@ -20,6 +23,19 @@
     border-radius: 20px;
 }
 
-.feed_post h2 {
+.feed_post:before {
+    content:'';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom,transparent 30%,#151414 100%);
+    flex: 1;
+}
+
+.feed_post h2, .feed_post p {
     text-shadow: 0 0 15px #000;
+    position: relative;
 }

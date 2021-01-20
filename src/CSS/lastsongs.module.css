@@ -1,3 +1,7 @@
+.section_title {
+    font-size: 2vw;
+}
+
 .song_history {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -16,4 +20,34 @@
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
+    height: 25vh;
+    position: relative;
 }
+
+.last_song:before {
+    content:'';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom,transparent 30%,#151414 100%);
+}
+
+.last_song * {
+    position: relative;
+    width: 100%;
+}
+@media screen and (max-width: 767px) {
+    .section_title {
+        font-size: 6vw;
+    }
+    .song_history {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .last_song {
+        padding: 5vw;
+    }
+  }

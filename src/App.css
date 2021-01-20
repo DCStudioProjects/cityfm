@@ -17,6 +17,11 @@ body {
   background-size: cover;
   background-position: center;
 }
+
+::-webkit-scrollbar-track {
+  background-color:#ecedee
+}
+  
 a {
   text-decoration: none;
 }
@@ -30,10 +35,6 @@ header {
   position: sticky;
   width: 100%;
   backdrop-filter: saturate(180%) blur(20px);
-}
-
-a {
-  text-decoration: none;
 }
 
 section {
