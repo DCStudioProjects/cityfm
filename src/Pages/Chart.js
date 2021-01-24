@@ -19,7 +19,7 @@ export default class Chart extends Component {
     render() {
         return (
             <section className={style.last_songs}>
-                <h2 className={style.section_title}>История эфира:</h2>
+                <h2 className={style.section_title}>HOT20 COUNTDOWN:</h2>
                 <div className={style.song_history}>
                     {this.state.chart?.map (song => (
                         <div>
