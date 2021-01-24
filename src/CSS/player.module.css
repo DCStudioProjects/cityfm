@@ -13,4 +13,9 @@
     width: 7vw;
     border-radius: 10px;
 }
-  
+
+@media screen and (max-width: 767px) {
+    .song_cover {
+        width: 20vw;
+    }
+}

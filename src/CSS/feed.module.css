@@ -1,5 +1,6 @@
 .feed {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .feed_post {
@@ -39,7 +40,6 @@
     top: 0;
     left: 0;
     background: linear-gradient(to bottom,transparent 30%,#151414 100%);
-    flex: 1;
 }
 
 .feed_post h2, .feed_post p {
@@ -49,11 +49,12 @@
 
 @media screen and (max-width: 767px) {
     .feed {
+        overflow: hidden;
         overflow-x: scroll;
-        width: 180vw;
     }
 
     .feed_post {
+        width: 60vw;
         height: 40vw;
     }
 
