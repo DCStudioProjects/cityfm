@@ -40,9 +40,10 @@
     position: relative;
     width: 100%;
 }
+
 @media screen and (max-width: 767px) {
     .section_title {
-        font-size: 6vw;
+        font-size: 7vw;
     }
     .song_history {
         grid-template-columns: 1fr 1fr;

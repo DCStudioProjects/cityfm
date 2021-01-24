@@ -8,7 +8,8 @@
   -webkit-font-smoothing: antialiased;
 }
 body {
-	font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
   font-weight: 300;
   margin: 0;
   padding: 0;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Feed from '../Components/Feed';
 import Hero from '../Components/Hero';
-import OnAir from '../Components/OnAir';
+import Schedule from '../Components/Schedule';
 import Lastsongs from '../Components/Lastsongs';
 
 export default class Home extends Component {
@@ -10,7 +10,7 @@ export default class Home extends Component {
             <>
             <Feed />
             <Hero />
-            <OnAir />
+            <Schedule />
             <Lastsongs />
             </>
         )

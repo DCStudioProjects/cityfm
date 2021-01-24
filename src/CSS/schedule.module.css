@@ -16,3 +16,13 @@ h2 {
     width: 100%;
     line-height: 1.8em;
 }
+
+@media screen and (max-width: 767px) {
+    .on_air {
+        display: block;
+    }
+    
+    h2 {
+        font-size: 7vw;
+    }
+}

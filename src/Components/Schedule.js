@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import style from '../CSS/onair.module.css';
+import style from '../CSS/schedule.module.css';
 
-export default class OnAir extends Component {
+export default class Schedule extends Component {
 
     state = {
         info: null,

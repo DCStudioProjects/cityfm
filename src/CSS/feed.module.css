@@ -9,6 +9,7 @@
     background-position: center center;
     margin-right: 1vw;
     position: relative;
+    flex: 1 3;
 }
 
 .feed_post:nth-child(1) {
@@ -19,6 +20,12 @@
 
 .feed_post:nth-child(2) {
     background-image: url("../Images/2010.jpg");
+    background-size: cover;
+    border-radius: 20px;
+}
+
+.feed_post:nth-child(3) {
+    background-image: url("../Images/hot20.jpg");
     background-size: cover;
     border-radius: 20px;
 }
@@ -43,13 +50,14 @@
 @media screen and (max-width: 767px) {
     .feed {
         overflow-x: scroll;
+        width: 180vw;
     }
 
     .feed_post {
-        width: 70vw;
+        height: 40vw;
     }
 
-    h2 {
+    .feed_post h2 {
         font-size: 5.5vw;
     }
 }
