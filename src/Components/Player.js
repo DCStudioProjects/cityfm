@@ -25,7 +25,7 @@ export default class Player extends Component {
         
         return (
             <section className={style.audio_player}>
-                <div><img className={style.song_cover} src={this.state.dataimage?.album.image[4]['#text'] || "1"} alt="Загрузка..."/></div>
+                <div><img className={style.song_cover} src={this.state.dataimage?.album.image[4]['#text']} alt="Загрузка..."/></div>
 	            <audio controls>
 		            <source src="http://stream.laut.fm/city" type="audio/mpeg" />
 		            <source src="http://stream.laut.fm/city" type="audio/ogg" />
