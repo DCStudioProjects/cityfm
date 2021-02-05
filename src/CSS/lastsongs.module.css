@@ -36,12 +36,12 @@
     background: linear-gradient(to bottom,transparent 30%,#151414 100%);
 }
 
-.last_song * {
-    position: relative;
-    width: 100%;
+.song_meta {
+    padding: 0.2vw 1vw;
 }
 
 @media screen and (max-width: 767px) {
+    
     .section_title {
         font-size: 7vw;
     }
@@ -57,12 +57,9 @@
         display: block;
     }
 
-    .name_desktop {
-        display: none;
-    }
-
-    .name_mobile {
+    .name {
         width: 100%;
+        padding: 0.5vw 1vw;
     }
 
     .last_song {
