@@ -6,19 +6,15 @@ export default class Player extends Component {
         data: null,
         title: null,
         cover: null,
-      };
+    };
     
     async componentDidMount() {
-        const response = await fetch("https://api.laut.fm/station/city/current_song");
+        var response = await fetch("https://api.laut.fm/station/city/current_song");
         const data = await response.json();
         this.setState({ data });
-        console.log(data);
-        const images = await fetch("https://ws.audioscrobbler.com/2.0/?method=album.getInfo&artist=" + this.state.data?.artist.name + "&album=" + (this.state.data?.album || this.state.data?.title) + "&api_key=ac93b58817c64de67582b6350184ca24&format=json");
-        const dataimage = await images.json();
-        const noimage = "Загрузка...";
+        var response = await fetch("https://ws.audioscrobbler.com/2.0/?method=album.getInfo&artist=" + this.state.data?.artist.name.replace(' & ', ', ') + "&album=" + (this.state.data?.album.replace(' & ', ', ') || this.state.data?.title.replace(' & ', ', ')) + "&api_key=ac93b58817c64de67582b6350184ca24&format=json");
+        const dataimage = await response.json();
         this.setState({ dataimage });
-        this.setState({ noimage });
-        console.log(dataimage);
     }
 
     render() {

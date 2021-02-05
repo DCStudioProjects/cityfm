@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
+  outline: 0;
 }
 body {
   font-family: 'Montserrat', sans-serif;
@@ -88,7 +89,7 @@ section {
     display: none;
     }
   .header_logo h1 {
-    font-size: 10vw;
+    font-size: 9vw;
     margin: 4.5vw 0;
     }
   .hero_title h2 {

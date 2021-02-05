@@ -5,13 +5,14 @@
 
 .song_history {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 .last_song {
     border-radius: 20px;
-    padding: 4vw 2vw;
-    padding-bottom: 0.5vw;
+    width: 12vw;
+    height: 12vw;
+    padding: 1vw;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -21,7 +22,6 @@
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
-    height: 25vh;
     position: relative;
 }
 
@@ -45,11 +45,28 @@
     .section_title {
         font-size: 7vw;
     }
+
+    .mobile {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
     .song_history {
-        grid-template-columns: 1fr 1fr;
+        display: block;
+    }
+
+    .name_desktop {
+        display: none;
+    }
+
+    .name_mobile {
+        width: 100%;
     }
 
     .last_song {
-        padding: 5vw;
+        width: 30vw;
+        height: 30vw;
     }
 }

@@ -3,30 +3,42 @@ import style from '../CSS/lastsongs.module.css';
 
 export default class Lastsongs extends Component {
     state = {
-        data: null,
+        
     }
 
     async componentDidMount () {
-        const url = "https://api.laut.fm/station/city/last_songs";
-        const response = await fetch(url);
-        const data = await response.json();
-        this.setState({ data });
-        console.log(data);
+        var response = await fetch("https://api.laut.fm/station/city/last_songs");
+        const data1 = await response.json();
+        const data2 = [];
+        const array2 = [];
+        for (var i = 0; i < 5; i++) {
+            let response = await fetch("https://ws.audioscrobbler.com/2.0/?method=album.getInfo&artist=" + data1[i].artist.name.replace(' & ', ', ') + "&album=" + data1[i].album + "&api_key=ac93b58817c64de67582b6350184ca24&format=json");
+            data2[i] = await response.json();
+            let array1 = {id: data1[i].id, artist: data1[i].artist.name, title: data1[i].title, cover: data2[i].album.image[4]["#text"]}
+            array2[i] = array1
+        }
+        this.setState({results: array2})
+        console.log(array2);
     }
+
 
     render() {
         return (
-            <section className={style.last_songs}>
+           <section className={style.last_songs}>
                 <h2 className={style.section_title}>История эфира:</h2>
                 <div className={style.song_history}>
-                    {this.state.data?.map (song => (
-                        
-                        <div className={style.last_song} key={song.id} style={{ backgroundImage: "url(" + song.artist.image + ")"}}>
-                            <p>{song.title}</p>
-                            <a href={song.artist.url || song.artist.laut_url} target="_blank" rel="noreferrer"><p>{song.artist.name}</p></a>
+                    {this.state.results?.map (song => (
+                        <div className={style.mobile}>
+                        <div className={style.last_song} key={song.id} style={{ backgroundImage: "url(" + song.cover + ")"}}>     
+                        <p className={style.name_desktop} key={song.id}>{song.artist} — {song.title}</p>
+                        </div>
+                        <div>
+                        <p className={style.name_mobile} key={song.id}>{song.title}</p>
+                        <p className={style.name_mobile} key={song.id}>{song.artist}</p>
+                        </div>
                         </div>
                     ))}
-                </div>
+                    </div>
             </section>
         )
     }

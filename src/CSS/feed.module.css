@@ -14,7 +14,7 @@
 }
 
 .feed_post:nth-child(1) {
-    background-image: url("https://assets.laut.fm/e1d6bde4572a8adb921bb70b0655e918");
+    background-image: url("../Images/morning.jpg");
     background-size: cover;
     border-radius: 20px;
 }
