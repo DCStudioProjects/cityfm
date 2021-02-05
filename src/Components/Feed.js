@@ -10,7 +10,7 @@ export default class Feed extends Component {
                     <p></p>
                 </div>
                 <div className={style.feed_post}>
-                    <h2>2010'S HOT SHOW</h2>
+                    <h2>2010'S HOT PARTY</h2>
                     <p></p>
                 </div>
                 <div className={style.feed_post}>

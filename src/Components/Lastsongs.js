@@ -18,13 +18,12 @@ export default class Lastsongs extends Component {
             array2[i] = array1
         }
         this.setState({results: array2})
-        console.log(array2);
     }
 
 
     render() {
         return (
-           <section className={style.last_songs}>
+           <section className={style.lastsongs}>
                 <h2 className={style.section_title}>История эфира:</h2>
                 <div className={style.song_history}>
                     {this.state.results?.map (song => (
