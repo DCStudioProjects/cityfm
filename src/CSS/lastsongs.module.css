@@ -8,7 +8,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
-.last_song {
+.lastsong_cover {
     border-radius: 20px;
     width: 12vw;
     height: 12vw;
@@ -25,7 +25,7 @@
     position: relative;
 }
 
-.last_song:before {
+.lastsong_cover:before {
     content:'';
     display: block;
     position: absolute;
@@ -40,16 +40,19 @@
     padding: 0.2vw 1vw;
 }
 
+.song_meta_time {
+    z-index: 0;
+}
+
 @media screen and (max-width: 767px) {
     
     .section_title {
         font-size: 7vw;
     }
 
-    .mobile {
+    .lastsong {
         display: flex;
         align-items: center;
-        flex-wrap: wrap;
         width: 100%;
     }
 
@@ -62,7 +65,7 @@
         padding: 0.5vw 1vw;
     }
 
-    .last_song {
+    .lastsong_cover {
         width: 30vw;
         height: 30vw;
     }
