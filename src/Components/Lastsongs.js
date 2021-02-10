@@ -15,7 +15,8 @@ export default class Lastsongs extends Component {
             let response = await fetch("https://ws.audioscrobbler.com/2.0/?method=album.getInfo&artist=" + data1[i].artist.name.replace(' & ', ', ') + "&album=" + data1[i].album + "&api_key=ac93b58817c64de67582b6350184ca24&format=json");
             data2[i] = await response.json();
             var date = new Date(data1[i].started_at)
-            let array1 = {id1: data1[i].id, id2: data1[i].id + 1, artist: data1[i].artist.name, title: data1[i].title, cover: data2[i].album.image[4]["#text"], started_at: date.getHours() + ":" + date.getMinutes()}
+            var minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
+            let array1 = {id1: data1[i].id, id2: data1[i].id + 1, artist: data1[i].artist.name, title: data1[i].title, cover: data2[i].album.image[4]["#text"], started_at: date.getHours() + ":" + minutes}
             array2[i] = array1
         }
         this.setState({results: array2})

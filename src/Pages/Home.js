@@ -2,18 +2,20 @@ import React, { Component } from 'react'
 import Feed from '../Components/Feed';
 import Schedule from '../Components/Schedule';
 import Lastsongs from '../Components/Lastsongs';
-import Helmet from "react-helmet";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 export default class Home extends Component {
     render() {
         return (
             <>
-            <Helmet>
+            <HelmetProvider>
+                <Helmet>
                 <title>City FM — слушать радио онлайн бесплатно</title>
-            </Helmet>
+                </Helmet>
             <Feed />
             <Schedule />
             <Lastsongs />
+            </HelmetProvider>
             </>
         )
     }
