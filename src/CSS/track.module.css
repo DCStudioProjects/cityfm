@@ -48,4 +48,26 @@
         height: 50vw;
         margin: auto;
     }
+    .track_info * {
+        width: 100%;
+    }
+    .track_info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .track_title {
+        font-size: 9vw;
+        text-align: center;
+    }
+    .track_artist {
+        font-size: 6vw;
+        text-align: center;
+    }
+    .listen_title {
+        font-size: 7vw;
+    }
+    .listen_service {
+        font-size: 6vw;
+    }
 }
