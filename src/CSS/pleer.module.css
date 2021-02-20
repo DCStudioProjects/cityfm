@@ -1,0 +1,13 @@
+.song_info {
+    display: flex;
+}
+
+.song_cover {
+    background-repeat: no-repeat;
+    background-size: contain;
+    flex: 3 5;
+}
+
+.song_meta {
+    flex: 2 5;
+}

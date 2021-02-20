@@ -1,21 +1,20 @@
 import React, { Component } from 'react'
 import style from '../CSS/lastsongs.module.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import dcover from '../Images/2010.jpg'
-export default class Lastsongs extends Component {
+
+export default class History extends Component {
     state = {
     }
 
     async componentDidMount() {
         const lastSongsResponse = await fetch("https://api.laut.fm/station/city/last_songs");
         const lastSongs = await lastSongsResponse.json();
-        lastSongs.length = Math.min(6, lastSongs.length);
 
         const promises = lastSongs.map((song) => new Promise((resolve, reject) => {
             const params = {
                 method: 'album.getInfo',
-                artist: song.artist.name.replace('&', ','),
-                album: song.live == true ? song.title.replace('&', ',') : song.album.replace('&', ','),
+                artist: song.artist.name.replace('&', '%26'),
+                album: song.live == true ? song.title.replace('&', '%26') : song.album.replace('&', '%26'),
                 api_key: 'ac93b58817c64de67582b6350184ca24',
                 format: 'json',
             };
@@ -61,7 +60,6 @@ export default class Lastsongs extends Component {
                             </div>
                         </div>
                     ))}
-                    <Link to="/lastsongs"><div className={style.lastsongs_next}>Далее</div></Link>
                 </div>
             </section>
         )

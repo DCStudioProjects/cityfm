@@ -1,6 +1,15 @@
-.section_title {
-    font-size: 2vw;
+.lastsongs_next {
+    border: 2px solid #fff;
+    border-radius: 50px;
+    position: absolute;
+    z-index: 2;
+    height: 50px;
+    right: 0;
     padding: 1vw;
+}
+
+.section_title {
+    padding: 1vw 0;
 }
 
 .song_history {
@@ -18,7 +27,7 @@
     background-position: center center;
     align-content: flex-end;
     background-color: #292926;
-    margin: 1vw;
+    margin-right: 1vw;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
@@ -26,14 +35,14 @@
 }
 
 .lastsong_cover:before {
-    content:'';
+    content: '';
     display: block;
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    background: linear-gradient(to bottom,transparent 30%,#151414 100%);
+    background: linear-gradient(to bottom, transparent 30%, #151414 100%);
 }
 
 .song_meta {
@@ -44,27 +53,36 @@
     z-index: 0;
 }
 
+@media screen and (min-width: 767px) {
+    .lastsongs:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 15%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        background: linear-gradient(to right, transparent 0%, #151414 100%);
+    }
+}
+
 @media screen and (max-width: 767px) {
-    
     .section_title {
         font-size: 7vw;
     }
-
     .lastsong {
         display: flex;
         align-items: center;
         width: 100%;
     }
-
     .song_history {
         display: block;
     }
-
     .name {
         width: 100%;
         padding: 0.5vw 1vw;
     }
-
     .lastsong_cover {
         width: 30vw;
         height: 30vw;

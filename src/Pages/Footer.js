@@ -4,7 +4,7 @@ export default class Footer extends Component {
     render() {
         return (
             <footer>
-            <p>Copyright © 2016-2021 City FM</p>
+            <p>Copyright © 2016-2021 City FM.</p>
             </footer>
         )
     }

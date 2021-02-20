@@ -1,22 +1,31 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import Home from './Home';
-import err404 from './404';
 
 export default class Header extends Component {
+
     render() {
         return (
-            <Router>
             <header>
-                <div className='header_logo'>
-                <Link to='/'><h1>City FM.beta</h1></Link>
+                <div className="mobile_header">
+                    <div className="burger">
+                        <span className="burger_line"></span>
+                    </div>
+                    <div className="mobile_logo">
+                        <Link to="/"><h1>City FM</h1></Link>
+                    </div>
+                    <p className="mobile_description">№1 in Moscow</p>
                 </div>
-                </header>
-                <Switch>
-                <Route exact path="/" component={Home}></Route>
-                <Route path="*" component={err404} />
-            </Switch>
-            </Router>
+                <div className={`nav_content`}>
+                    <Link to="/"><h1>City FM<br></br>beta</h1></Link>
+                    <Link to="/lastsongs"><p>История песен</p></Link>
+                    <Link to="/chart"><p>Чарт</p></Link>
+                    <Link to="/shows"><p>Программы</p></Link>
+                    <Link to="/player"><p>Плеер</p></Link>
+                    <Link to="/chat"><p>Гостевая книга</p></Link>
+                    <Link to="/cam"><p>Вебкамера</p></Link>
+                    <Link to="/contact"><p>Контакты</p></Link>
+                </div>
+            </header>
         )
     }
 }

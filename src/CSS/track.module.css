@@ -1,0 +1,51 @@
+.track_section {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 2vw;
+}
+
+.track_cover {
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex: 1 2;
+}
+
+.track_info {
+    flex: 1 2;
+}
+
+.track_title {
+    font-size: 4vw;
+}
+
+.track_artist {
+    font-size: 3vw;
+}
+
+.track_listen {
+    padding: 2vw 0;
+}
+
+.listen_title {
+    font-size: 2vw;
+}
+
+.listen_service {
+    padding: 1vw;
+    border-bottom: 1px solid #2f2e2e;
+}
+
+@media screen and (max-width: 767px) {
+    .track_section {
+        display: block;
+    }
+    .track_cover {
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 50vw;
+        height: 50vw;
+        margin: auto;
+    }
+}

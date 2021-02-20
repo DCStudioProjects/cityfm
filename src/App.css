@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
-
 * {
   box-sizing: border-box;
   color: #fff;
@@ -7,12 +6,13 @@
   padding: 0;
   -webkit-font-smoothing: antialiased;
   outline: 0;
+  position: relative;
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Rubik', sans-serif;
   overflow-x: hidden;
-  font-weight: 300;
+  font-weight: 400;
   margin: 0;
   padding: 0;
   background-color: #151414;
@@ -20,66 +20,56 @@ body {
   background-size: cover;
   background-position: center;
 }
-  
+
+.body {
+  padding: 2vw 0 0 4vw;
+}
+
+p {
+  font-size: 1.2vw;
+}
+
+h2 {
+  font-size: 2.2vw;
+}
+
 a {
   text-decoration: none;
 }
 
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1vw 2vw;
-  box-shadow: 0px -2px 8px 0px rgba(0,0,0,0.04), 0px 8px 8px 0px rgba(0,0,0,0.04);
-  position: sticky;
+.nav_content a {
   width: 100%;
-  backdrop-filter: saturate(180%) blur(20px);
-}
-
-section {
-  padding: 1vw;
 }
 
 .header_logo {
   flex: 2;
 }
 
-.header_desktop_nav {
-  display: flex;
-  justify-content: space-between;
-  flex: 1;
-}
-
 .header_desktop_nav a {
   color: #fff;
 }
 
-.header_logo h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 800;
-  font-size: 3vw;
-  line-height: 1;
-  color: #fff;
-  -webkit-text-stroke: 1px #fff;
-  text-stroke: 1px #fff;
-  -webkit-text-fill-color: transparent;
-  text-fill-color: transparent;
-  color: transparent;
+h1 {
+  font-size: 3.5vw;
 }
 
 .logo {
-	position: absolute;
-	top: 60px;
-	left: 50px;
-	display: block;
-	z-index: 11;
-	transition: all 250ms linear;
+  position: absolute;
+  top: 60px;
+  left: 50px;
+  display: block;
+  z-index: 11;
+  transition: all 250ms linear;
 }
 
 .logo img {
-	height: 26px;
-	width: auto;
-	display: block;
+  height: 26px;
+  width: auto;
+  display: block;
+}
+
+section {
+  padding-bottom: 1vw;
 }
 
 .volume {
@@ -116,24 +106,115 @@ footer {
   padding: 2vw;
 }
 
-::-webkit-scrollbar-thumb {
-  border-radius: 4px;
-  background: #ff6000
-}
-@media screen and (max-width: 767px) {
-  .header_desktop_nav {
+@media screen and (min-width: 767px) {
+  .body {
+    width: calc(100% - 20vw);
+  }
+  header {
+    padding: 1vw 2vw;
+    box-shadow: 0px -2px 8px 0px rgba(0, 0, 0, 0.04), 0px 8px 8px 0px rgba(0, 0, 0, 0.04);
+    position: sticky;
+    height: 100vh;
+    width: 20vw;
+    backdrop-filter: saturate(180%) blur(20px);
+    z-index: 1;
+  }
+  .mobile_logo {
     display: none;
   }
+  .mobile_description {
+    display: none;
+  }
+  #root {
+    display: flex;
+  }
+  .nav_content {
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    height: 90vh;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: #ff6000
+  }
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+}
 
+@media screen and (max-width: 767px) {
+  .body {
+    padding: 0;
+  }
+  h1 {
+    font-size: 7vw;
+  }
+  p {
+    font-size: 5vw;
+  }
+  section {
+    padding-bottom: 3vw;
+  }
+  header {
+    position: sticky;
+  }
+  .mobile_header {
+    padding: 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .burger {
+    width: 30px;
+    height: 30px;
+  }
+  .burger:hover {
+    cursor: pointer;
+  }
+  .burger.active > .nav_content {
+    display: block;
+  }
+  .burger_line {
+    top: 50%;
+    width: 26px;
+    position: absolute;
+    background: #fff;
+    height: 2px;
+    transform: translateY(-50%);
+  }
+  .burger_line:before, .burger_line:after {
+    position: absolute;
+    width: 26px;
+    transition: all .2s;
+    height: 2px;
+    background-color: #fff;
+    min-height: 2px;
+    content: "";
+    display: block;
+    transform: translateX(0);
+  }
+  .burger_line:before {
+    top: -6px;
+  }
+  .burger_line:after {
+    width: 60%;
+    top: 6px;
+  }
+  .nav_content {
+    display: none;
+  }
   .header_logo h1 {
     font-size: 9vw;
     margin: 4.5vw 0;
   }
-
   .hero_title h2 {
     font-size: 10vw;
   }
-  
   .hero_img {
     display: none;
   }

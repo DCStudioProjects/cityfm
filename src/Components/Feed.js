@@ -6,15 +6,15 @@ export default class Feed extends Component {
         return (
             <section className={style.feed}>
                 <div className={style.feed_post}>
-                    <h2>GOOD MORNING GUYS!</h2>
+                    <h2>Бодрого утра!</h2>
                     <p></p>
                 </div>
                 <div className={style.feed_post}>
-                    <h2>2010'S HOT PARTY</h2>
+                    <h2>Золотые 2010-е</h2>
                     <p></p>
                 </div>
                 <div className={style.feed_post}>
-                    <h2>HOT20 COUNTDOWN</h2>
+                    <h2>Топ 20</h2>
                     <p></p>
                 </div>
             </section>

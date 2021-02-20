@@ -5,11 +5,6 @@
 .on_air, .next_onair {
     flex: 1;
     flex-wrap: wrap;
-    padding: 1vw;
-}
-
-h2 {
-    font-size: 2vw;
 }
 
 .on_air *, .next_onair * {
@@ -17,12 +12,35 @@ h2 {
     line-height: 1.8em;
 }
 
+.online {
+    background-color: #1957ea;
+    width: fit-content;
+    padding: 1vw;
+    border-radius: 15px;
+}
+
+.dj_name {
+    font-size: 1.35vw;
+}
+
+.dj_time {
+    font-size: 1.5vw;
+}
 @media screen and (max-width: 767px) {
     .on_air {
         display: block;
     }
-    
     h2 {
         font-size: 7vw;
+    }
+    .online {
+        padding: 2vw;
+    }
+    .dj_name {
+        font-size: 4.5vw;
+    }
+    
+    .dj_time {
+        font-size: 5.5vw;
     }
 }
