@@ -19,6 +19,8 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  width: 100%;
+  height: 100vh;
 }
 
 .body {
@@ -162,12 +164,16 @@ footer {
   }
   header {
     position: sticky;
+    z-index: 1;
   }
   .mobile_header {
     padding: 5vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  .desktop_logo {
+    display: none;
   }
   .burger {
     width: 30px;
@@ -176,8 +182,22 @@ footer {
   .burger:hover {
     cursor: pointer;
   }
-  .burger.active > .nav_content {
+  .burger.active span {
+    transform: rotate(90deg);
+  }
+  .nav_content.active {
     display: block;
+    position: absolute;
+    background: #000;
+    z-index: 999;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center
+  }
+  .nav_content.active * {
+    width: 100%;
   }
   .burger_line {
     top: 50%;

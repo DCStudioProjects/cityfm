@@ -122,6 +122,8 @@ svg {
 @media screen and (max-width: 767px) {
     .player {
         padding: 2vw;
+        position: fixed;
+        width: 100%;
     }
     .song_cover {
         width: 20vw;

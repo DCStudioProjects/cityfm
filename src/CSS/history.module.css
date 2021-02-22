@@ -2,32 +2,15 @@
     padding: 1vw 0;
 }
 
-.section_container {
-    display: flex;
-    align-items: center;
-}
-
 .song_history {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
-.lastsongs_next {
-    border: 2px solid #fff;
-    border-radius: 50px;
-    position: absolute;
-    z-index: 2;
-    height: 50px;
-    right: 0;
-    padding: 1vw;
-    display: flex;
-    align-items: center;
-}
-
 .lastsong_cover {
     border-radius: 20px;
-    width: 11.5vw;
-    height: 11.5vw;
+    width: 12vw;
+    height: 12vw;
     padding: 1vw;
     background-size: cover;
     background-repeat: no-repeat;
@@ -58,20 +41,6 @@
 
 .song_meta_time {
     z-index: 0;
-}
-
-@media screen and (min-width: 767px) {
-    .lastsongs:before {
-        content: '';
-        display: block;
-        position: absolute;
-        width: 15%;
-        height: 100%;
-        top: 0;
-        right: 0;
-        z-index: 1;
-        background: linear-gradient(to right, transparent 0%, #151414 100%);
-    }
 }
 
 @media screen and (max-width: 767px) {

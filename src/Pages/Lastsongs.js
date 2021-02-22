@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import style from '../CSS/lastsongs.module.css';
+import style from '../CSS/history.module.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 export default class History extends Component {
@@ -23,9 +23,8 @@ export default class History extends Component {
             const cover = fetch(url)
                 .then((response) => response.json())
                 .then((songData) => songData.album.image[4]["#text"])
+                //.then((cover) => console.log(cover))
                 .catch(err => reject(err));
-            console.log(cover);
-
             const date = new Date(song.started_at);
 
             const songData = {
@@ -50,7 +49,6 @@ export default class History extends Component {
                 <div className={style.song_history}>
                     {this.state.results?.map(song => (
                         <div className={style.lastsong} key={song.id1}>
-                            {console.log(song.cover)}
                             <div className={style.lastsong_cover} key={song.id1} style={{ backgroundImage: `url(${song.cover})` }}>
                                 <p className={style.song_meta_time}>{song.started_at}</p>
                             </div>

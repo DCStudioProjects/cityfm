@@ -9,7 +9,7 @@ import Artist from './Pages/Artist';
 import Track from './Pages/Track';
 import Lastsongs from './Pages/Lastsongs';
 import Chart from './Pages/Chart';
-import Feed from './Components/Feed';
+import Feed from './Pages/Feed';
 import Pleer from './Pages/Player';
 import Chat from './Pages/Chat';
 import Cam from './Pages/Cam';
