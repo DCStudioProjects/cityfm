@@ -10,7 +10,7 @@ export default class Track extends Component {
     }
 
     async componentDidMount() {
-        const response = await fetch(`https://ws.audioscrobbler.com/2.0/?method=artist.getInfo&artist=${this.props.match.params.artist.replace('&', '%26')}&api_key=ac93b58817c64de67582b6350184ca24&format=json`);
+        const response = await fetch(`https://ws.audioscrobbler.com/2.0/?method=artist.getInfo&artist=${this.props.match.params.artist.replace('&', '%26')}&autocorrect=1&api_key=ac93b58817c64de67582b6350184ca24&format=json`);
         const artist = await response.json();
         console.log(artist);
         this.setState({ artist: artist.artist })

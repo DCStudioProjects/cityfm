@@ -10,7 +10,7 @@ export default class Track extends Component {
     }
 
     async componentDidMount() {
-        const response = await fetch(`https://ws.audioscrobbler.com/2.0/?method=album.getInfo&artist=${this.props.match.params.artist.replace('&', '%26')}&album=${this.props.match.params.name.replace('&', '%26')}&api_key=ac93b58817c64de67582b6350184ca24&format=json`);
+        const response = await fetch(`https://ws.audioscrobbler.com/2.0/?method=album.getInfo&artist=${this.props.match.params.artist.replace('&', '%26').replace('(', '%28').replace(')', '%29')}&autocorrect=1&album=${this.props.match.params.name.replace('&', '%26').replace('(', '%28').replace(')', '%29')}&api_key=ac93b58817c64de67582b6350184ca24&format=json`);
         const track = await response.json();
         this.setState({ cover: track?.album?.image[4]["#text"] })
     }

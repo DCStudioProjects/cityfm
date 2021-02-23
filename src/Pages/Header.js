@@ -5,7 +5,6 @@ export default class Header extends Component {
     constructor(props) {
         super(props);
         this.state = {isToggleOn: false};
-    
         // This binding is necessary to make `this` work in the callback
         this.handleClick = this.handleClick.bind(this);
       }
@@ -14,10 +13,11 @@ export default class Header extends Component {
         this.setState(prevState => ({
           isToggleOn: !prevState.isToggleOn
         }));
+        document.body.style.overflow = (this.state.isToggleOn == true) ? "auto" : "hidden";
       }
     render() {
         return (
-            <header>
+            <header className={`${this.state.isToggleOn ? ' active' : ''}`}>
                 <div className="mobile_header">
                     <div onClick={this.handleClick} className={`burger${this.state.isToggleOn ? ' active' : ''}`}>
                         <span className="burger_line"></span>
@@ -34,7 +34,7 @@ export default class Header extends Component {
                     <Link to="/player" onClick={this.handleClick}><p>Плеер</p></Link>
                     <Link to="/chat" onClick={this.handleClick}><p>Гостевая книга</p></Link>
                     <Link to="/cam" onClick={this.handleClick}><p>Вебкамера</p></Link>
-                    <Link to="/contact"><p>Контакты</p></Link>
+                    <Link to="/contact" onClick={this.handleClick}><p>Контакты</p></Link>
                 </div>
             </header>
         )
