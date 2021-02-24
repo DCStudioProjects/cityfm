@@ -17,8 +17,6 @@ export default class Player extends Component {
         const name = curmeta.live === true ? curmeta.title : curmeta.album
         const response2 = await fetch(`https://ws.audioscrobbler.com/2.0/?method=album.getInfo&artist=${curmeta.artist.name.replace('&', '%26').replace('%', '%25').replace('(', '%28').replace(')', '%29')}&album=${name.replace('&', '%26').replace('%', '%25').replace('(', '%28').replace(')', '%29')}&autocorrect=1&api_key=ac93b58817c64de67582b6350184ca24&format=json`);
         const curcover = await response2.json();
-        console.log(curcover?.album?.image[4]["#text"])
-
         this.setState({ cover: curcover?.album?.image[4]["#text"] });
     }
 
@@ -28,7 +26,7 @@ export default class Player extends Component {
                 <div className={style.song_info}>
                     <div className={style.song_cover} style={{ backgroundImage: `url(${this.state.cover})` }}>
                     </div>
-                    <div>
+                    <div className={style.play_info}>
                         <div className={style.song_meta}>
                             <Controls />
                             <Link to={`/artist/${this.state.artist}/track/${this.state.title}`}><p className={style.song_meta}>{this.state.title}</p></Link>

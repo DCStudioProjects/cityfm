@@ -16,6 +16,7 @@
     "react-helmet-async": "^1.0.7",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "react-vk": "^5.0.2",
     "web-vitals": "^1.1.0"
   },
   "scripts": {
@@ -37,6 +38,7 @@
       "not op_mini all"
     ],
     "development": [
+      "ie 11",
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"

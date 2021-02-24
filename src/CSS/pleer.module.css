@@ -5,9 +5,9 @@
 .song_cover {
     background-repeat: no-repeat;
     background-size: contain;
-    flex: 3 5;
+    flex: 2 5;
 }
 
-.song_meta {
+.play_info {
     flex: 2 5;
 }

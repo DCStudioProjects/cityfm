@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import style from '../CSS/track.module.css';
+import style from '../CSS/artist.module.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
@@ -19,16 +19,16 @@ export default class Track extends Component {
     render() {
         return (
             <HelmetProvider>
-                <div className={style.track_section}>
+                <div className={style.artist_section}>
                     <Helmet>
                         <title>{this.props.match.params.artist}</title>
                     </Helmet>
-                    <div className={style.track_cover} style={{ backgroundImage: "url(" + this.state.artist?.image[4]["#text"] + ")" }}></div>
+                    <div className={style.artist_photo} style={{ backgroundImage: "url(" + this.state.artist?.image[4]["#text"] + ")" }}></div>
                     <p>{this.state.artist?.name}</p>
-                    <p>{this.state.artist?.bio.summary}</p>
+                    <p>{this.state.artist?.bio.content}</p>
                     <p>Жанры:</p>
                     {this.state.artist?.tags?.tag?.map(genres => (
-                        <p>{genres.name}</p>
+                        <p key={1}>{genres.name}</p>
                     )
                     )}
                 </div>

@@ -1,5 +1,5 @@
 import { DiscussionEmbed } from "disqus-react"
-
+import { Comments } from "react-vk";
 const Chat = () => {
   const disqusShortname = "your-disqus-shortname"
   const disqusConfig = {
@@ -14,6 +14,7 @@ const Chat = () => {
         shortname={disqusShortname}
         config={disqusConfig}
       />
+      <Comments elementId={'chat'} options={'chat'} pageId={'guest'} />
     </div>
   )
 }

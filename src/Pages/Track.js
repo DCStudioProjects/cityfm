@@ -12,7 +12,8 @@ export default class Track extends Component {
     async componentDidMount() {
         const response = await fetch(`https://ws.audioscrobbler.com/2.0/?method=album.getInfo&artist=${this.props.match.params.artist.replace('&', '%26').replace('(', '%28').replace(')', '%29')}&autocorrect=1&album=${this.props.match.params.name.replace('&', '%26').replace('(', '%28').replace(')', '%29')}&api_key=ac93b58817c64de67582b6350184ca24&format=json`);
         const track = await response.json();
-        this.setState({ cover: track?.album?.image[4]["#text"] })
+        console.log(response);
+        this.setState({ cover: track?.album?.image[4]["#text"] });
     }
 
     render() {
@@ -20,12 +21,12 @@ export default class Track extends Component {
             <HelmetProvider>
                 <div className={style.track_section}>
                     <Helmet>
-                        <title>{this.props.match.params.artist} — {this.props.match.params.name}</title>
+                        <title>{this.props.match.params.artist.replace(/%20/g, ' ')} — {this.props.match.params.name.replace(/%20/g, ' ')}</title>
                     </Helmet>
                     <div className={style.track_cover} style={{ backgroundImage: "url(" + this.state.cover + ")" }}></div>
                     <div className={style.track_info}>
-                        <h1 className={style.track_title}>{this.props.match.params.name}</h1>
-                        <Link to={`/artist/${this.props.match.params.artist}`}><h2 className={style.track_artist}>{this.props.match.params.artist}</h2></Link>
+                        <h1 className={style.track_title}>{this.props.match.params.name.replace(/%20/g, ' ')}</h1>
+                        <Link to={`/artist/${this.props.match.params.artist}`}><h2 className={style.track_artist}>{this.props.match.params.artist.replace(/%20/g, ' ')}</h2></Link>
                         <div className={style.track_listen}>
                             <h3 className={style.listen_title}>Слушать:</h3>
                             <div className={style.listen_service}><a href={`https://vk.com/audios0?q=${this.props.match.params.artist}%20${this.props.match.params.name}&section=my`} target="_blank" rel="noreferrer">VK</a></div>

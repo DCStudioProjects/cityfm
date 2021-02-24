@@ -2,10 +2,35 @@
     background-color: rgba(40, 40, 37, .5);
     display: flex;
     align-items: center;
+    padding: 1vw 0;
+}
+
+.chart_number {
+    font-size: 4vw;
+    font-weight: 700;
+    line-height: 1;
+    color: rgba(255, 255, 255, .15);
+    width: 50px;
+    min-width: 50px;
+    display: block;
+    text-align: center;
+    margin-right: 2vw;
 }
 
 .chart_cover {
     width: 7vw;
     height: 7vw;
+    background-size: contain;
     margin-right: 1vw;
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 767px) {
+    .chart_number {
+        font-size: 9vw;
+    }
+    .chart_cover {
+        width: 30vw;
+        height: 30vw;
+    }
 }

@@ -11,35 +11,30 @@ export default class Lastsongs extends Component {
         const lastSongs = await lastSongsResponse.json();
         lastSongs.length = Math.min(6, lastSongs.length);
 
-        const promises = lastSongs.map(async (song) => new Promise((resolve, reject) => {
+        const promises = lastSongs.map(async (song) => {
             const params = {
                 method: 'album.getInfo',
-                artist: song.artist.name.replace('&', ','),
-                album: song.live == true ? song.title.replace('&', ',') : song.album.replace('&', ','),
+                artist: song.artist.name.replace('&', '%26'),
+                album: song.live == true ? song.title.replace('&', '%26') : song.album.replace('&', '%26'),
                 api_key: 'ac93b58817c64de67582b6350184ca24',
                 format: 'json',
             };
 
             const url = "https://ws.audioscrobbler.com/2.0/?" + Object.keys(params).map(key => `${key}=${params[key]}`).join('&');
-            const cover = async () => {
-                let response = await fetch(url);
-                let photo = await response.json();
-                console.log('1' + photo);
-            }
-
+            const cover = await fetch(url);
+            const json = await cover.json();
             const date = new Date(song.started_at);
 
             const songData = {
                 id1: song.id,
                 id2: song.id + 1,
-                album: song.album,
                 artist: song.artist.name,
                 title: song.title,
-                cover: cover,
+                cover: json?.album.image[4]["#text"],
                 started_at: date.getHours() + ':' + date.getMinutes().toString().padStart(2, '0')
             }
-            resolve(songData);
-        }));
+            return (songData);
+        });
         const results = await Promise.all(promises);
         this.setState({ results: results })
     }
