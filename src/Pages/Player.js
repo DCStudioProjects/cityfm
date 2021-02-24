@@ -23,14 +23,14 @@ export default class Player extends Component {
     render() {
         return (
             <section className={style.player}>
-                <div className={style.song_info}>
-                    <div className={style.song_cover} style={{ backgroundImage: `url(${this.state.cover})` }}>
+                <div className={style.track_info}>
+                    <div className={style.track_cover} style={{ backgroundImage: `url(${this.state.cover})` }}>
                     </div>
                     <div className={style.play_info}>
-                        <div className={style.song_meta}>
+                        <div className={style.track_meta}>
                             <Controls />
-                            <Link to={`/artist/${this.state.artist}/track/${this.state.title}`}><p className={style.song_meta}>{this.state.title}</p></Link>
-                            <Link to={`/artist/${this.state.artist}`}><p className={style.song_meta}>{this.state.artist}</p></Link>
+                            <Link to={`/artist/${this.state.artist}/song/${this.state.title}`}><p className={style.track_meta}>{this.state.title}</p></Link>
+                            <Link to={`/artist/${this.state.artist}`}><p className={style.track_meta}>{this.state.artist}</p></Link>
                         </div>
                         <div className={style.track_listen}>
                             <h3 className={style.listen_title}>Слушать:</h3>

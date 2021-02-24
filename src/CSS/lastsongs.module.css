@@ -5,6 +5,7 @@
 .section_container {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .song_history {
@@ -77,14 +78,22 @@
 @media screen and (max-width: 767px) {
     .section_title {
         font-size: 7vw;
+        padding-bottom: 4vw;
     }
     .lastsong {
         display: flex;
         align-items: center;
         width: 100%;
+        padding-bottom: 4vw;
     }
     .song_history {
         display: block;
+    }
+    .lastsongs_next {
+        bottom: -5vw;
+        padding: 1vw 4vw;
+        left: auto;
+        right: auto;
     }
     .name {
         width: 100%;

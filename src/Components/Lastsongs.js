@@ -30,7 +30,7 @@ export default class Lastsongs extends Component {
                 id2: song.id + 1,
                 artist: song.artist.name,
                 title: song.title,
-                cover: json?.album.image[4]["#text"],
+                cover: json?.album?.image[4]["#text"],
                 started_at: date.getHours() + ':' + date.getMinutes().toString().padStart(2, '0')
             }
             return (songData);
