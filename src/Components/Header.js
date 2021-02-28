@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Route, Link } from 'react-router-dom';
 
 export default class Header extends Component {
     constructor(props) {
@@ -13,8 +13,21 @@ export default class Header extends Component {
         this.setState(prevState => ({
             isToggleOn: !prevState.isToggleOn
         }));
-        document.body.style.overflow = (this.state.isToggleOn == true) ? "auto" : "hidden";
+        document.body.style.overflow = (this.state.isToggleOn === true) ? "auto" : "hidden";
     }
+
+    async componentDidMount() {
+        const menu = [
+            ['История песен', '/lastsongs'],
+            ['Чарт', '/chart'],
+            ['Программы', '/shows'],
+            ['Гостевая книга', '/chat'],
+            ['Вебкамера', '/cam'],
+            ['Контакты', '/contact']
+        ]
+        this.setState({ menu: menu })
+    }
+
     render() {
         return (
             <header className={`${this.state.isToggleOn ? ' active' : ''}`}>
@@ -29,13 +42,9 @@ export default class Header extends Component {
                     <p className="mobile_description">№1 in Moscow</p>
                 </div>
                 <div className={`nav_content${this.state.isToggleOn ? ' active' : ''}`}>
-                    <Link to="/lastsongs" onClick={this.handleClick}><p>История песен</p></Link>
-                    <Link to="/chart" onClick={this.handleClick}><p>Чарт</p></Link>
-                    <Link to="/shows" onClick={this.handleClick}><p>Программы</p></Link>
-                    <Link to="/player" onClick={this.handleClick}><p>Плеер</p></Link>
-                    <Link to="/chat" onClick={this.handleClick}><p>Гостевая книга</p></Link>
-                    <Link to="/cam" onClick={this.handleClick}><p>Вебкамера</p></Link>
-                    <Link to="/contact" onClick={this.handleClick}><p>Контакты</p></Link>
+                    {this.state.menu?.map(menu => (
+                        <Link to={menu[1]} onClick={this.state.isToggleOn ? this.handleClick : ''}><p>{menu[0]}</p></Link>
+                    ))}
                 </div>
             </header>
         )

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import style from '../CSS/history.module.css';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Route, Link } from 'react-router-dom';
 
 export default class History extends Component {
     state = {
@@ -14,7 +14,7 @@ export default class History extends Component {
             const params = {
                 method: 'album.getInfo',
                 artist: song.artist.name.replace('&', '%26'),
-                album: song.live == true ? song.title.replace('&', '%26') : song.album.replace('&', '%26'),
+                album: song.live === true ? song.title.replace('&', '%26') : song.album.replace('&', '%26'),
                 api_key: 'ac93b58817c64de67582b6350184ca24',
                 format: 'json',
             };

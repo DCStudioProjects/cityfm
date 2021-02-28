@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import style from '../CSS/chart.module.css';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Route, Link } from 'react-router-dom';
 
 export default class Chart extends Component {
 
@@ -12,7 +12,6 @@ export default class Chart extends Component {
         var response = await fetch("https://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&limit=5&api_key=ac93b58817c64de67582b6350184ca24&format=json");
         var chart = await response.json();
         var chart = chart.tracks.track;
-        console.log(chart)
         const info = chart.map(async (song) => {
             const params = {
                 method: 'album.getInfo',
@@ -24,38 +23,32 @@ export default class Chart extends Component {
             const url = "https://ws.audioscrobbler.com/2.0/?" + Object.keys(params).map(key => `${key}=${params[key]}`).join('&');
             const response = await fetch(url);
             const info = await response.json();
-            const songData = {
-                id1: song.id,
-                id2: song.id + 1,
-                artist: song.artist.name,
-                title: song.title,
-                cover: info?.album?.image[4]["#text"],
-            }
-
             return (info)
         })
         const results = await Promise.all(info)
-        this.setState({ chart: results, key: 1 });
-        console.log(this.state.chart)
-
+        const key = 1;
+        this.setState({ chart: results, key: key });
     }
 
     render() {
         return (
             <section className={style.chart}>
                 <h2 className={style.section_title}>Чарт:</h2>
-                <div className={style.chart_list}>
-                    {this.state.chart?.map(charts => (
-                        <div className={style.chart_song} key={charts.album?.playcount}>
-                            <p className={style.chart_number}>{this.state.key++}</p>
-                            <div className={style.chart_cover} style={{ backgroundImage: "url(" + charts.album?.image[4]["#text"] + ")" }}>
+                <div className={style.chart_container}>
+                    <div className={style.chart_list}>
+                        {this.state.chart?.map(charts => (
+                            <div className={style.chart_song} key={charts.album?.playcount}>
+                                <p className={style.chart_number}>{this.state.key++}</p>
+                                <div className={style.chart_cover} style={{ backgroundImage: "url(" + charts.album?.image[4]["#text"] + ")" }}>
+                                </div>
+                                <div className={style.chart_meta}>
+                                    <Link to={`/artist/${charts.album?.artist}/track/${charts.album?.name}`}><p>{charts.album?.name}</p></Link>
+                                    <Link to={`/artist/${charts.album?.artist}`}><p>{charts.album?.artist}</p></Link>
+                                </div>
                             </div>
-                            <div className={style.chart_meta}>
-                                <Link to={`/artist/${charts.album?.artist}/track/${charts.album?.name}`}><p>{charts.album?.name}</p></Link>
-                                <Link to={`/artist/${charts.album?.artist}`}><p>{charts.album?.artist}</p></Link>
-                            </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
+                    <div className={style.lastsongs_next}><Link to="/lastsongs">Далее</Link></div>
                 </div>
             </section>
         )

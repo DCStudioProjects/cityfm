@@ -2,12 +2,6 @@
     padding: 1vw 0;
 }
 
-.section_container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .song_history {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -16,8 +10,9 @@
 .lastsongs_next {
     border: 2px solid #fff;
     border-radius: 50px;
-    position: absolute;
+    position: sticky;
     z-index: 2;
+    width: fit-content;
     height: 50px;
     right: 0;
     padding: 1vw;
@@ -79,6 +74,11 @@
     .section_title {
         font-size: 7vw;
         padding-bottom: 4vw;
+    }
+    .section_container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
     }
     .lastsong {
         display: flex;

@@ -197,7 +197,7 @@ footer {
     background: #000;
     z-index: 999;
     width: 100%;
-    height: calc(100vh - 45vw);
+    height: calc(100vh - 40vw);
     display: flex;
     flex-wrap: wrap;
     align-items: center

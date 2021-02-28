@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import style from '../CSS/player.module.css';
 import Controls from './Controls';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Route, Link } from 'react-router-dom';
 
 export default class Player extends Component {
     state = {
@@ -9,6 +9,7 @@ export default class Player extends Component {
     }
 
     async componentDidMount() {
+        const Player = async () => {
         const response1 = await fetch('https://api.laut.fm/station/city/current_song')
         const curmeta = await response1.json();
         this.setState({ title: curmeta.title, artist: curmeta.artist.name });
@@ -17,6 +18,9 @@ export default class Player extends Component {
         console.log(name)
         const curcover = await response2.json();
         this.setState({ cover: curcover?.album?.image[4]["#text"] });
+        }
+        Player();
+        setInterval(Player, 40000)
     }
 
     render() {

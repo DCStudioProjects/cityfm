@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import style from '../CSS/chart.module.css';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Route, Link } from 'react-router-dom';
 
 export default class Chart extends Component {
 
     state = {
-
+        key: 1,
     }
 
     async componentDidMount() {
@@ -24,20 +24,10 @@ export default class Chart extends Component {
             const url = "https://ws.audioscrobbler.com/2.0/?" + Object.keys(params).map(key => `${key}=${params[key]}`).join('&');
             const response = await fetch(url);
             const info = await response.json();
-            const songData = {
-                id1: song.id,
-                id2: song.id + 1,
-                artist: song.artist.name,
-                title: song.title,
-                cover: info?.album?.image[4]["#text"],
-            }
-
             return (info)
         })
         const results = await Promise.all(info)
-        this.setState({ chart: results, key: 1 });
-        console.log(this.state.chart)
-
+        this.setState({ chart: results });
     }
 
     render() {

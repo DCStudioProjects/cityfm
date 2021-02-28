@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import style from '../CSS/artist.module.css';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Route, Link } from 'react-router-dom';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 export default class Track extends Component {
