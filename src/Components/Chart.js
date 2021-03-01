@@ -48,7 +48,7 @@ export default class Chart extends Component {
                             </div>
                         ))}
                     </div>
-                    <div className={style.lastsongs_next}><Link to="/lastsongs">Далее</Link></div>
+                    <div className={style.lastsongs_next}><Link to="/chart">Далее</Link></div>
                 </div>
             </section>
         )
