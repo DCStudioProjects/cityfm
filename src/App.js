@@ -5,7 +5,6 @@ import Header from './Components/Header';
 import Home from './Pages/Home';
 import Player from './Components/Player';
 import Footer from './Components/Footer';
-import Artist from './Pages/Artist';
 import Track from './Pages/Track';
 import Lastsongs from './Pages/Lastsongs';
 import Chart from './Pages/Chart';
@@ -23,7 +22,6 @@ function App() {
       <div className="body">
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/artist/:artist" component={Artist} />
         <Route path="/artist/:artist/track/:name" component={Track} />
         <Route exact path="/lastsongs" component={Lastsongs} />
         <Route exact path="/chart" component={Chart} />

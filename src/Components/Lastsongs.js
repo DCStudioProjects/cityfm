@@ -36,7 +36,6 @@ export default class Lastsongs extends Component {
                 return (songData);
             });
             const results = await Promise.all(promises);
-            console.log(results);
             this.setState({ results: results })
         }
         LastSongs();
@@ -56,8 +55,8 @@ export default class Lastsongs extends Component {
                                     <p className={style.song_meta_time}>{song.started_at}</p>
                                 </div>
                                 <div>
-                                    <Link to={`/artist/${song.artist}/track/${song.title}`}><p className={style.song_meta} key={song.id1}>{song.title}</p></Link>
-                                    <Link to={`/artist/${song.artist}`}><p className={style.song_meta} key={song.id2}>{song.artist}</p></Link>
+                                    <Link to={`/artist/${song.artist}/track/${song.title}`}><p className={style.song_meta} key={song.id1}>{song.title}</p>
+                                        <p className={style.song_meta} key={song.id2}>{song.artist}</p></Link>
                                 </div>
                             </div>
                         ))}

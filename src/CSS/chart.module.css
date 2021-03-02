@@ -9,8 +9,7 @@
     font-weight: 700;
     line-height: 1;
     color: rgba(255, 255, 255, .15);
-    width: 50px;
-    min-width: 50px;
+    width: 25px;
     display: block;
     text-align: center;
     margin-right: 2vw;
@@ -24,13 +23,13 @@
     border-radius: 20px;
 }
 
-.lastsongs_next {
+.chart_next {
     border: 2px solid #fff;
     border-radius: 50px;
     position: sticky;
-    z-index: 2;
     height: 50px;
     right: 0;
+    font-size: 1vw;
     width: fit-content;
     padding: 1vw;
     display: flex;
@@ -47,9 +46,10 @@
         flex-wrap: wrap;
         justify-content: center;
     }
-    .lastsongs_next {
+    .chart_next {
         bottom: -5vw;
         padding: 1vw 4vw;
+        font-size: 4vw;
         left: auto;
         right: auto;
     }
