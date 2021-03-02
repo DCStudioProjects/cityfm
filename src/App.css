@@ -191,18 +191,19 @@ footer {
     left: -2px;
     width: 30px;
   }
+
   .nav_content.active {
     display: block;
     position: absolute;
     background: #000;
     z-index: 999;
     width: 100%;
-    height: calc(100vh - 40vw);
+    height: 95vh;
     display: flex;
     flex-wrap: wrap;
     align-items: center
   }
-  .nav_content.active * {
+  .nav_content.active .nav_url {
     width: 100%;
     padding-left: 2vw;
   }

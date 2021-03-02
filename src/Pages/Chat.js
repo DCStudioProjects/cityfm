@@ -3,8 +3,10 @@ import React, { Component } from 'react'
 export default class Chat extends Component {
 
   render() {
+    const VK = window.VK;
     return (
       <div>
+        <h1>Гостевая книга</h1>
         <div id="sigCommentsBlock"></div>
         <script type="text/javascript">
           {(function () {
@@ -16,6 +18,7 @@ export default class Chat extends Component {
             var ss = document.getElementsByTagName('script')[0];
             ss.parentNode.insertBefore(script, ss);
           })()};</script>
+        <p>Пиши сюда и DJ передаст твоё сообщение на 30 минуте эфира!</p>
       </div>
     )
   }

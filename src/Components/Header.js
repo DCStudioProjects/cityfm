@@ -30,7 +30,7 @@ export default class Header extends Component {
 
     render() {
         return (
-            <header className={`${this.state.isToggleOn ? ' active' : ''}`}>
+            <header className={`header${this.state.isToggleOn ? ' active' : ''}`}>
                 <Link to="/"><h1 className="desktop_logo">City FM</h1></Link>
                 <div className="mobile_header">
                     <div onClick={this.handleClick} className={`burger${this.state.isToggleOn ? ' active' : ''}`}>
@@ -43,7 +43,7 @@ export default class Header extends Component {
                 </div>
                 <div className={`nav_content${this.state.isToggleOn ? ' active' : ''}`}>
                     {this.state.menu?.map(menu => (
-                        <Link to={menu[1]} onClick={this.state.isToggleOn ? this.handleClick : ''}><p>{menu[0]}</p></Link>
+                        <Link to={menu[1]} onClick={this.state.isToggleOn ? this.handleClick : ''} className="nav_url"><p>{menu[0]}</p></Link>
                     ))}
                 </div>
             </header>

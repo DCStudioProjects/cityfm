@@ -27,7 +27,7 @@ const Controls = () => {
     return (
         <div className={style.controls}>
             <span className={style.play_icon} onClick={() => setIsPlaying(!isPlaying)}>
-                <audio ref={audioEl} src="https://stream.laut.fm/city">
+                <audio ref={audioEl} src="https://stream.laut.fm/city" preload="auto">
                 </audio>
                 <FontAwesomeIcon icon={isPlaying ? faPause : faPlay} />
             </span>

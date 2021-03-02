@@ -1,5 +1,5 @@
 .player {
-    z-index: 99999;
+    z-index: 2;
     position: sticky;
     bottom: 0;
     display: flex;
