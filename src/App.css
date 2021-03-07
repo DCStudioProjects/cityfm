@@ -191,7 +191,6 @@ footer {
     left: -2px;
     width: 30px;
   }
-
   .nav_content.active {
     display: block;
     position: absolute;
@@ -201,7 +200,8 @@ footer {
     height: calc(100vh - 40vw);
     display: flex;
     flex-wrap: wrap;
-    align-items: center
+    align-items: center;
+    padding-bottom: 12vw;
   }
   .nav_content.active .nav_url {
     width: 100%;

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import style from '../CSS/lastsongs.module.css';
 import { BrowserRouter as Route, Link } from 'react-router-dom';
+import CityFM from '../Images/CityFM.jpg';
+
 export default class Lastsongs extends Component {
     state = {
     }
@@ -24,13 +26,13 @@ export default class Lastsongs extends Component {
                 const cover = await fetch(url);
                 const json = await cover.json();
                 const date = new Date(song.started_at);
-
+                if ((json?.album?.image[4]["#text"] != undefined) && (json?.album?.image[4]["#text"] !== '')) {var photo = json?.album?.image[4]["#text"]} else {var photo = 'https://i.ibb.co/dpnXYhh/CityFM.jpg'}
                 const songData = {
                     id1: song.id,
                     id2: song.id + 1,
                     artist: song.artist.name,
                     title: song.title,
-                    cover: json?.album?.image[4]["#text"],
+                    cover: photo,
                     started_at: date.getHours() + ':' + date.getMinutes().toString().padStart(2, '0')
                 }
                 return (songData);
