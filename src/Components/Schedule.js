@@ -19,7 +19,7 @@ const Schedule = () => {
                     <h2>У микрофона:</h2>
                     <div className={style.dj_block}>
                         <h3 className={style.dj_name}>Дэн Климов</h3>
-                        <h3 className={style.dj_time}>{info?.current_playlist.hour}:00&nbsp;&nbsp;&gt;&nbsp;&nbsp;{info?.current_playlist.end_time}:00</h3>
+                        <h3 className={style.dj_time}>{info?.current_playlist.hour + 2}:00&nbsp;&nbsp;&gt;&nbsp;&nbsp;{info?.current_playlist.end_time + 2}:00</h3>
                     </div>
                 </div>
                 <div className={style.next_onair}>
