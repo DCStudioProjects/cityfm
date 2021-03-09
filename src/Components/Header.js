@@ -42,8 +42,8 @@ export default class Header extends Component {
                     <p className="mobile_description">№1 in Moscow</p>
                 </div>
                 <div className={`nav_content${this.state.isToggleOn ? ' active' : ''}`}>
-                    {this.state.menu?.map(menu => (
-                        <Link to={menu[1]} onClick={this.state.isToggleOn ? this.handleClick : ''} className="nav_url"><p>{menu[0]}</p></Link>
+                    {this.state.menu?.map((menu, index) => (
+                        <Link to={menu[1]} onClick={this.state.isToggleOn ? this.handleClick : ''} className="nav_url" key={index}><p>{menu[0]}</p></Link>
                     ))}
                 </div>
             </header>

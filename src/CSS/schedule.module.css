@@ -1,20 +1,25 @@
-.on_air {
-    display: flex;
-}
-
-.on_air, .next_onair {
-    flex: 1;
-    flex-wrap: wrap;
-}
-
-.on_air *, .next_onair * {
+.schedule_section {
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.now_onair, .next_onair {
+    flex: 1 1;
+}
+
+.on_air, .now_onair, .next_onair {
+    width: fit-content;
+}
+
+.on_air *, .now_onair *, .next_onair * {
     line-height: 1.8em;
 }
 
-.online {
+.dj_block {
     background-color: #1957ea;
-    width: fit-content;
     padding: 1vw;
     border-radius: 15px;
 }
@@ -26,6 +31,7 @@
 .dj_time {
     font-size: 1.5vw;
 }
+
 @media screen and (max-width: 767px) {
     .on_air {
         display: block;
@@ -33,13 +39,15 @@
     h2 {
         font-size: 7vw;
     }
-    .online {
+    .dj_block {
         padding: 2vw;
+    }
+    .next_onair {
+        display: none;
     }
     .dj_name {
         font-size: 4.5vw;
     }
-    
     .dj_time {
         font-size: 5.5vw;
     }

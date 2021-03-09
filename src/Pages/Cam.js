@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import style from '../CSS/cam.module.css';
 
 export default class Cam extends Component {
     render() {

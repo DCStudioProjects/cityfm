@@ -13,7 +13,7 @@
     font-size: 1vw;
     position: sticky;
     width: fit-content;
-    height: 50px;
+    height: 3.5vw;
     right: 0;
     padding: 1vw;
     display: flex;
@@ -94,6 +94,7 @@
         bottom: -5vw;
         padding: 1vw 4vw;
         font-size: 4vw;
+        height: 11vw;
         left: auto;
         right: auto;
     }

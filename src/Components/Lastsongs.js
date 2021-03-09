@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import style from '../CSS/lastsongs.module.css';
 import { BrowserRouter as Route, Link } from 'react-router-dom';
-import CityFM from '../Images/CityFM.jpg';
 
 export default class Lastsongs extends Component {
     state = {
@@ -26,7 +25,7 @@ export default class Lastsongs extends Component {
                 const cover = await fetch(url);
                 const json = await cover.json();
                 const date = new Date(song.started_at);
-                if ((json?.album?.image[4]["#text"] != undefined) && (json?.album?.image[4]["#text"] !== '')) {var photo = json?.album?.image[4]["#text"]} else {var photo = 'https://i.ibb.co/dpnXYhh/CityFM.jpg'}
+                if ((json?.album?.image[4]["#text"] !== undefined) && (json?.album?.image[4]["#text"] !== '')) { var photo = json?.album?.image[4]["#text"] } else { photo = 'https://i.ibb.co/dpnXYhh/CityFM.jpg' }
                 const songData = {
                     id1: song.id,
                     id2: song.id + 1,
@@ -51,13 +50,13 @@ export default class Lastsongs extends Component {
                 <h2 className={style.section_title}>История эфира:</h2>
                 <div className={style.section_container}>
                     <div className={style.song_history}>
-                        {this.state.results?.map(song => (
+                        {this.state.results?.map((song, index) => (
                             <div className={style.lastsong} key={song.id1}>
-                                <div className={style.lastsong_cover} key={song.id1} style={{ backgroundImage: `url(${song.cover})` }}>
+                                <div className={style.lastsong_cover} key={index} style={{ backgroundImage: `url(${song.cover})` }}>
                                     <p className={style.song_meta_time}>{song.started_at}</p>
                                 </div>
                                 <div>
-                                    <Link to={`/artist/${song.artist}/track/${song.title}`}><p className={style.song_meta} key={song.id1}>{song.title}</p>
+                                    <Link to={`/artist/${song.artist.replace(/&/g, '%26')}/track/${song.title}`}><p className={style.song_meta} key={song.id1}>{song.title}</p>
                                         <p className={style.song_meta} key={song.id2}>{song.artist}</p></Link>
                                 </div>
                             </div>

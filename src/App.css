@@ -197,11 +197,11 @@ footer {
     background: #000;
     z-index: 2;
     width: 100%;
-    height: calc(100vh - 40vw);
+    height: 100vh;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    padding-bottom: 12vw;
+    padding-bottom: 50vw;
   }
   .nav_content.active .nav_url {
     width: 100%;

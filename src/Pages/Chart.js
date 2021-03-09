@@ -4,12 +4,11 @@ import { BrowserRouter as Route, Link } from 'react-router-dom';
 
 const Chart = () => {
     const [results, setResults] = useState(null);
-    const [key, setKey] = useState(1);
     useEffect(() => {
         const Fetch = async () => {
             var response = await fetch("https://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&limit=39&api_key=ac93b58817c64de67582b6350184ca24&format=json");
             var chart = await response.json();
-            var chart = chart.tracks.track;
+            chart = chart.tracks.track;
             console.log(chart)
             const info = chart.map(async (song) => {
                 const params = {
@@ -34,9 +33,9 @@ const Chart = () => {
             <section className={style.chart}>
                 <h2 className={style.section_title}>Чарт:</h2>
                 <div className={style.chart_list}>
-                    {results?.map(charts => (
-                        <div className={style.chart_song} key={charts.album?.playcount}>
-                            <p className={style.chart_number}>{key}</p>
+                    {results?.map((charts, index) => (
+                        <div className={style.chart_song} key={index}>
+                            <p className={style.chart_number}>{index + 1}</p>
                             <div className={style.chart_cover} style={{ backgroundImage: "url(" + charts.album?.image[4]["#text"] + ")" }}>
                             </div>
                             <div className={style.chart_meta}>
