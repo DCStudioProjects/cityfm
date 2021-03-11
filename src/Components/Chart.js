@@ -8,8 +8,8 @@ const Chart = () => {
         const Fetch = async () => {
             var response = await fetch("https://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&limit=5&api_key=ac93b58817c64de67582b6350184ca24&format=json");
             var chart = await response.json();
-            chart = chart.tracks.track;
-            const info = chart.map(async (song) => {
+            chart = chart?.tracks?.track;
+            const info = chart?.map(async (song) => {
                 const params = {
                     method: 'album.getInfo',
                     artist: song.artist.name.replace('&', '%26'),

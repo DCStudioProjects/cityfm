@@ -15,8 +15,8 @@ export default class Lastsongs extends Component {
             const promises = lastSongs.map(async (song) => {
                 const params = {
                     method: 'album.getInfo',
-                    artist: song.artist.name.replace('&', '%26'),
-                    album: song.live === true ? song.title.replace('&', '%26') : song.album.replace('&', '%26'),
+                    artist: song.artist.name.replace(/ /g, '%20').replace(/&/g, '%26').replace('(', '%28').replace(')', '%29'),
+                    album: song.live === true ? song.title.replace(/ /g, '%20').replace(/&/g, '%26').replace('(', '%28').replace(')', '%29') : song.album.replace(/ /g, '%20').replace(/&/g, '%26').replace('(', '%28').replace(')', '%29'),
                     api_key: 'ac93b58817c64de67582b6350184ca24',
                     format: 'json',
                 };
