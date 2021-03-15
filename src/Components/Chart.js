@@ -38,8 +38,8 @@ const Chart = () => {
                             <div className={style.chart_cover} style={{ backgroundImage: "url(" + charts.album?.image[4]["#text"] + ")" }}>
                             </div>
                             <div className={style.chart_meta}>
-                                <Link to={`/artist/${charts.album?.artist}/track/${charts.album?.name}`}><p>{charts.album?.name}</p></Link>
-                                <Link to={`/artist/${charts.album?.artist}`}><p>{charts.album?.artist}</p></Link>
+                                <Link to={`/artist/${charts.album?.artist}/track/${charts.album?.name}`}><p>{charts.album?.name}</p>
+                                    <p>{charts.album?.artist}</p></Link>
                             </div>
                         </div>
                     ))}

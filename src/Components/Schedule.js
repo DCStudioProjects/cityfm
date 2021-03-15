@@ -8,7 +8,6 @@ const Schedule = () => {
             const response1 = await fetch("https://api.laut.fm/station/city");
             const data1 = await response1.json();
             setInfo(data1);
-            //console.log(data1)
         }
         Fetch()
     }, [])

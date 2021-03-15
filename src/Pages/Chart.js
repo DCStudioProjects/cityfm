@@ -9,7 +9,6 @@ const Chart = () => {
             var response = await fetch("https://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&limit=39&api_key=ac93b58817c64de67582b6350184ca24&format=json");
             var chart = await response.json();
             chart = chart.tracks.track;
-            console.log(chart)
             const info = chart.map(async (song) => {
                 const params = {
                     method: 'album.getInfo',

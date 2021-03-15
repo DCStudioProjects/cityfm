@@ -1,13 +1,12 @@
-import React, { Component } from 'react'
+import React, { useEffect, useState } from 'react'
 import style from '../CSS/lastsongs.module.css';
 import { BrowserRouter as Route, Link } from 'react-router-dom';
 
-export default class Lastsongs extends Component {
-    state = {
-    }
+const Lastsongs = () => {
+    const [results, setResults] = useState(null);
 
-    async componentDidMount() {
-        const LastSongs = async () => {
+    useEffect(() => {
+        const Fetch = async () => {
             const lastSongsResponse = await fetch("https://api.laut.fm/station/city/last_songs");
             const lastSongs = await lastSongsResponse.json();
             lastSongs.length = Math.min(6, lastSongs.length);
@@ -37,34 +36,32 @@ export default class Lastsongs extends Component {
                 return (songData);
             });
             const results = await Promise.all(promises);
-            this.setState({ results: results })
+            setResults(results);
         }
-        LastSongs();
-        setInterval(LastSongs, 15000);
-    }
-
-
-    render() {
-        return (
-            <section className={style.lastsongs}>
-                <h2 className={style.section_title}>История эфира:</h2>
-                <div className={style.section_container}>
-                    <div className={style.song_history}>
-                        {this.state.results?.map((song, index) => (
-                            <div className={style.lastsong} key={song.id1}>
-                                <div className={style.lastsong_cover} key={index} style={{ backgroundImage: `url(${song.cover})` }}>
-                                    <p className={style.song_meta_time}>{song.started_at}</p>
-                                </div>
-                                <div>
-                                    <Link to={`/artist/${song.artist.replace(/&/g, '%26')}/track/${song.title}`}><p className={style.song_meta} key={song.id1}>{song.title}</p>
-                                        <p className={style.song_meta} key={song.id2}>{song.artist}</p></Link>
-                                </div>
+        Fetch();
+        setInterval(Fetch, 15000);
+    }, [])
+    return (
+        <section className={style.lastsongs}>
+            <h2 className={style.section_title}>История эфира:</h2>
+            <div className={style.section_container}>
+                <div className={style.song_history}>
+                    {results?.map((song, index) => (
+                        <div className={style.lastsong} key={song.id1}>
+                            <div className={style.lastsong_cover} key={index} style={{ backgroundImage: `url(${song.cover})` }}>
+                                <p className={style.song_meta_time}>{song.started_at}</p>
                             </div>
-                        ))}
-                    </div>
-                    <div className={style.lastsongs_next}><Link to="/lastsongs">Далее</Link></div>
+                            <div>
+                                <Link to={`/artist/${song.artist.replace(/&/g, '%26')}/track/${song.title}`}><p className={style.song_meta} key={song.id1}>{song.title}</p>
+                                    <p className={style.song_meta} key={song.id2}>{song.artist}</p></Link>
+                            </div>
+                        </div>
+                    ))}
                 </div>
-            </section>
-        )
-    }
+                <div className={style.lastsongs_next}><Link to="/lastsongs">Далее</Link></div>
+            </div>
+        </section>
+    )
 }
+
+export default Lastsongs
